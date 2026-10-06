@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Org name]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #1f1e1c;
+    --muted: #6b6862;
+    --rule: #e4e1da;
+    --link: #8a3b12;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
+
+  header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 28px; padding-bottom: 28px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; }
+  .logo { width: 28px; height: 28px; background: var(--text); border-radius: 3px; }
+  .brand span { font-weight: 600; font-size: 19px; letter-spacing: 0.01em; }
+  nav { display: flex; gap: 24px; font-family: Inter, sans-serif; font-size: 14px; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--text); }
+
+  main { padding: 56px 0 120px; }
+  p { margin: 0 0 1.2em; }
+  ol.goals { list-style: none; counter-reset: g; padding: 0; margin: 0 0 1.4em; }
+  ol.goals li { counter-increment: g; position: relative; padding-left: 2.4em; margin-bottom: 0.7em; }
+  ol.goals li::before { content: "(" counter(g) ")"; position: absolute; left: 0; color: var(--muted); }
+
+  ul.questions { list-style: none; padding: 0; margin: 0 0 1.4em; }
+  ul.questions li { position: relative; padding-left: 2.4em; margin-bottom: 0.7em; }
+  ul.questions li::before { content: "–"; position: absolute; left: 0.3em; color: var(--muted); }
+  section#research, section#careers { margin-top: 36px; padding-top: 40px; border-top: 1px solid var(--rule); }
+  h2 { font-size: 15px; font-family: Inter, sans-serif; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; }
+  a { color: var(--link); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  @media (max-width: 520px) {
+    body { font-size: 17px; }
+    main { padding-top: 32px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#"><div class="logo"></div><span>[Org name]</span></a>
+    <nav><a href="#about">About</a><a href="#research">Research</a><a href="#careers">Careers</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="about">
+    <p>[Org name] builds evaluations for AI character and whether models are aligned to their spec/constitution. Our high-level goals are:</p>
+    <ol class="goals">
+      <li>Measure AI propensities and character. Verify whether models are aligned to their specs/constitutions. Prioritize areas of character/the spec that seem most impactful in catastrophic risk reduction.</li>
+      <li>Do work that encourages the design of specs that reduce catastrophic risk.</li>
+    </ol>
+    <p>Current org members are <a href="https://scholar.google.com/citations?user=p1NIunwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Robert McCarthy</a> and <a href="https://www.linkedin.com/in/owen-kichizo-terry/" target="_blank" rel="noopener">Owen Terry</a>. We are based in Berkeley and funded by Coefficient Giving.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <p>We are currently working on evaluating whether AIs will assist in government power concentration. Helpful-only government AIs could enable <a href="https://www.forethought.org/research/ai-enabled-coups-how-a-small-group-could-use-ai-to-seize-power" target="_blank" rel="noopener">extreme concentrations of power</a>, <a href="https://www.lawfaremedia.org/article/the-unitary-artificial-executive" target="_blank" rel="noopener">authoritarian expansion of executive power</a>, and <a href="https://law-ai.org/law-following-ai/" target="_blank" rel="noopener">erosion of the rule of law</a>. Aligning models to refuse egregious requests, or to behave as an ethical human employee would, could meaningfully mitigate these risks. Both <a href="https://www.anthropic.com/constitution" target="_blank" rel="noopener">Claude’s constitution</a> and <a href="https://model-spec.openai.com/2026-08-18.html" target="_blank" rel="noopener">OpenAI’s model spec</a> state some relevant red lines for their model behaviour. Yet a basic eval (<a href="https://freesystems.substack.com/p/the-dictatorship-eval" target="_blank" rel="noopener">The Dictatorship Eval</a>) already exposes flaws in their models. Models from the other labs perform even worse.</p>
+    <p>We aim to significantly improve the state of concentration of power evaluations. We are building a dataset to help us answer the following questions:</p>
+    <ul class="questions">
+      <li>Do models cross red lines and assist with egregious activities that concentrate power and undermine the rule of law? Does Claude, for example, violate the “Avoiding problematic concentrations of power” considerations outlined in its constitution?</li>
+      <li>Where are the models' refusal boundaries? What key factors influence whether a model refuses or complies?</li>
+      <li>How easy is it to jailbreak or red-team the model into complying?</li>
+      <li>Besides compliance and refusal, do models have other response modes? (e.g., escalating, whistleblowing, etc)</li>
+    </ul>
+    <p>This project is advised by <a href="https://www.lawfaremedia.org/contributors/kfrazier" target="_blank" rel="noopener">Kevin Frazier</a>, <a href="https://www.governance.ai/team/kevin-wei" target="_blank" rel="noopener">Kevin Wei</a>, and <a href="https://www.linkedin.com/in/harvey-lederman-2b533097/" target="_blank" rel="noopener">Harvey Lederman</a>.</p>
+  </section>
+
+  <section id="careers">
+    <h2>Careers</h2>
+    <p>We are hiring a researcher to work on concentration of power evaluations. See the job description <a href="https://docs.google.com/document/d/1olAYb2yDNVO0YMunJynleZREOyGxAAYO9waRvs1i77U/edit?tab=t.0#heading=h.h8pxu5vjcnjl" target="_blank" rel="noopener">here</a> and apply <a href="https://supreme-light-16d.notion.site/42637e7fd8ae4a78b90967ef665dafdb" target="_blank" rel="noopener">here</a>.</p>
+  </section>
+</main>
+</body>
+</html>
