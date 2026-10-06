@@ -39,7 +39,7 @@
   nav a { color: var(--muted); text-decoration: none; }
   nav a:hover { color: var(--text); }
 
-  main { padding: 8px 0 200px; }
+  main { padding: 8px 0 72px; }
   section#about { padding-top: 40px; border-top: 1px solid var(--rule); }
   p { margin: 0 0 1.2em; }
   ol.goals { list-style: none; counter-reset: g; padding: 0; margin: 0 0 1.4em; }
@@ -52,6 +52,12 @@
   section#research, section#careers { margin-top: 36px; padding-top: 40px; border-top: 1px solid var(--rule); }
   h2 { font-size: 15px; font-family: Inter, sans-serif; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; }
   a { color: var(--link); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  footer .inner {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 24px 0 64px; border-top: 1px solid var(--rule);
+    font-family: Inter, sans-serif; font-size: 14px; color: var(--muted);
+  }
 
   @media (max-width: 520px) {
     body { font-size: 17px; }
@@ -96,5 +102,9 @@
     <p>We are hiring a researcher to work on concentration of power evaluations. See the job description <a href="https://docs.google.com/document/d/1olAYb2yDNVO0YMunJynleZREOyGxAAYO9waRvs1i77U/edit?tab=t.0#heading=h.h8pxu5vjcnjl" target="_blank" rel="noopener">here</a> and apply <a href="https://supreme-light-16d.notion.site/42637e7fd8ae4a78b90967ef665dafdb" target="_blank" rel="noopener">here</a>.</p>
   </section>
 </main>
+
+<footer class="wrap">
+  <div class="inner"><span>[Org name]</span><span>Berkeley, CA</span></div>
+</footer>
 </body>
 </html>
