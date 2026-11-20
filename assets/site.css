@@ -52,6 +52,24 @@ h1 { font: 500 clamp(30px, 3.6vw, 44px)/1.15 var(--heading); letter-spacing: -0.
 .hero .project { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--border); }
 .hero .project h3 { font: 500 15px/1.4 var(--heading); margin-bottom: 12px; }
 
+/* Research uses the site's existing type, paper colour, and fine rules. */
+#research { scroll-margin-top: 140px; }
+.research-list { list-style: none; padding: 0; max-width: 760px; border-top: 1px solid var(--border); }
+.research-list > li { border-bottom: 1px solid var(--border); }
+.research-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: baseline; padding: 26px 0; }
+.research-meta { text-align: right; white-space: nowrap; font: 400 14px/1.5 var(--body); color: var(--text); }
+.research-body h3 { font: 600 18px/1.4 var(--body); }
+.research-body h3 a:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.research-authors { margin-top: 12px; font-size: 14px; line-height: 1.55; color: var(--text-2); }
+@media (min-width: 641px) and (max-width: 1100px) {
+  .brand .long { display: none; }
+}
+@media (max-width: 640px) {
+  #research { scroll-margin-top: 100px; }
+  .research-entry { grid-template-columns: 1fr; gap: 12px; padding: 22px 0; }
+  .research-meta { text-align: left; }
+}
+
 /* people */
 .team { display: grid; grid-template-columns: repeat(2, minmax(0, 300px)); gap: 40px 56px; }
 .person { min-width: 0; }
